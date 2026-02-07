@@ -5,8 +5,8 @@
 const themeToggle = document.getElementById('themeToggle');
 const htmlElement = document.documentElement;
 
-// Check for saved theme preference or default to 'light'
-const currentTheme = localStorage.getItem('theme') || 'light';
+// Check for saved theme preference or default to 'dark'
+const currentTheme = localStorage.getItem('theme') || 'dark';
 htmlElement.setAttribute('data-theme', currentTheme);
 updateThemeToggle(currentTheme);
 
@@ -23,6 +23,7 @@ function toggleTheme() {
 
 function updateThemeToggle(theme) {
     themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+    themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
     themeToggle.style.display = 'flex';
     themeToggle.style.alignItems = 'center';
     themeToggle.style.justifyContent = 'center';

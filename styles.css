@@ -485,7 +485,7 @@ section {
     position: relative;
     height: 250px;
     overflow: hidden;
-    background: linear-gradient(135deg, #f0f4f8 0%, #e8eef7 100%);
+    background: black;
 }
 
 .project-image img {
@@ -930,6 +930,14 @@ section {
 
     .project-image {
         height: 200px;
+    }
+
+    /* Ensure project images fit in small viewports without affecting desktop */
+    .project-image img {
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        height: 100%;
     }
 
     /* Footer Mobile */
